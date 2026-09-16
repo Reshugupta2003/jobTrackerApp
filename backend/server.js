@@ -2,7 +2,13 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 
+
 const app = express();
+
+app.use(express.json());
+
+const authRoutes = require("./routes/authRoutes");
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend running");
