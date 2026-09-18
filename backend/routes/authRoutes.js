@@ -3,6 +3,9 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/Usermodel");
 const jwt = require("jsonwebtoken");
 
+const protect = require("../middleware/authMiddleware");
+
+
 
 const router = express.Router();
 
@@ -23,7 +26,7 @@ router.post("/register", async (req, res) => {
 
     res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message });
+    res.status(400).json({ message: "Server error", error: err.message });
   }
 });
 
@@ -57,5 +60,11 @@ router.post("/login", async(req,res)=>{
     res.status(400).json({message:"Server Error", error:err.message});
   }
 });
+
+
+router.get("/profile", protect, async (req, res) => {
+  res.status(200).json({ message: "You are authorized", user: req.user });
+});
+
 
 module.exports = router;
