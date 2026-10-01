@@ -10,6 +10,9 @@ app.use(express.json());
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
+const applicationRoutes = require("./routes/applicationRoutes");
+app.use("/api/applications", applicationRoutes);
+
 app.get("/", (req, res) => {
   res.send("Backend running");
 });
