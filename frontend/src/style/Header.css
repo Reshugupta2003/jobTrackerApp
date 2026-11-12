@@ -1,0 +1,12 @@
+header {
+ display: inline-block;
+  width: 25vw;
+  height: 100vh;
+  min-width: 100px;
+  max-width: 300px;
+  position: absolute;
+}
+
+li.Setting {
+  margin-top: 200px;
+}
