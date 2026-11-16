@@ -1,9 +1,10 @@
 import './App.css'
-import {Header} from './index'
+import {Header, Login} from './components/index'
 function App() {
   return (
     <>
-      <Header/>
+      {/* <Header/> */}
+      <Login/>
     </>
   )
 }
