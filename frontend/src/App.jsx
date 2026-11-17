@@ -1,10 +1,11 @@
 import './App.css'
-import {Header, Login} from './components/index'
+import {Header, Login, Signup} from './components/index'
 function App() {
   return (
     <>
-      {/* <Header/> */}
-      <Login/>
+       {/* <Header/>  */}
+      {/* <Login/> */}
+      <Signup />
     </>
   )
 }
